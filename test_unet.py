@@ -120,7 +120,7 @@ def test_on_new_image(model, image_path, output_path, device='cuda'):
 image_path = 'my_test_data/face_bl_10.jpg'
 
 # The path where the restored image will be saved
-output_path = 'restored_image.png'
+output_path = 'restored_image.jpg'
 
 # Loading the model
 model = UNet().to(device)
