@@ -244,9 +244,9 @@ def test():
             # Visualization
             fig, ax = plt.subplots(1, 3, figsize=(15, 5))
             ax[0].imshow(inputs)
-            ax[0].set_title("Input (Corrupted)")
+            ax[0].set_title("Input (Blurred)")
             ax[1].imshow(targets)
-            ax[1].set_title("Ground Truth (Ideal)")
+            ax[1].set_title("Real (Ideal)")
             ax[2].imshow(outputs)
             ax[2].set_title("Predicted (Restored)")
 
