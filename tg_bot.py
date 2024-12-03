@@ -2,7 +2,7 @@ import os
 import telebot
 import image_recovery
 
-TOKEN = '7094638875:AAFUfAby185WrO1XR3U26tgTEETtCVH_2iA'  # Insert your token here
+TOKEN = ''  # Insert your token here
 bot = telebot.TeleBot(TOKEN)
 
 is_recovering = False
