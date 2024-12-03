@@ -191,7 +191,7 @@ def train():
         val_losses.append(avg_val_loss)
 
         epoch_time = time.time() - start_time
-        remaining_time = epoch_time * (num_epochs - (epoch + 1)) / (epoch + 1)
+        remaining_time = epoch_time * (num_epochs - (epoch + 1))
         remaining_minutes = remaining_time // 60
         remaining_seconds = remaining_time % 60
         print(f"Epoch [{epoch + 1}/{num_epochs}], Train Loss: {avg_train_loss:.4f}, Val Loss: {avg_val_loss:.4f}, "
@@ -219,7 +219,7 @@ def test():
     model.load_state_dict(torch.load(model_save_path, map_location=device, weights_only=True))
     model.eval()
 
-    os.makedirs("Results", exist_ok=True)  # Results folder
+    os.makedirs("results", exist_ok=True)  # results folder
 
     with torch.no_grad():
         for i, (inputs, targets) in enumerate(test_loader):
@@ -227,9 +227,9 @@ def test():
             outputs = model(inputs)
 
             # Saving the restored, blurred and target image
-            save_image(outputs, f"Results/fake_{i + 1}.png")
-            save_image(inputs, f"Results/input_{i + 1}.png")
-            save_image(targets, f"Results/real_{i + 1}.png")
+            save_image(outputs, f"results/fake_{i + 1}.png")
+            save_image(inputs, f"results/input_{i + 1}.png")
+            save_image(targets, f"results/real_{i + 1}.png")
 
             # Transformation for visualization
             inputs = inputs.cpu().numpy().transpose(0, 2, 3, 1)
